@@ -1,0 +1,44 @@
+<div id="search-prices">
+    <div class="article">
+        <div class="row wrap_17">
+            <div class="col-xs-12">
+                <h2 class="header_2 indent_4">Canada Travel Insurance Price Search</h2>
+            </div>
+        </div>                 
+        <div class="row  wrap_17">
+            <div class="col-xs-3">
+                <h3 class="text_2 color_2">Current age: {{search.currentAge}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h3 class="text_2 color_2">Effective date age: {{search.effectiveDateAge}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h3 class="text_2 color_2">Amount: {{search.amount}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h3 class="text_2 color_2">Total days: {{search.totalDays}}</h3>
+            </div>
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <thead class="thead-inverse">
+                        <tr class="success">
+                            <th>Insurance Company</th>
+                            <th>Deductible</th>
+                            <th>Price/day</th>
+                            <th>Total price</th>                            
+                        </tr>
+                    </thead>
+                    <tr>          
+                    <tbody>
+                        <tr ng-repeat="item in search.prices.allianz.with">
+                            <td>{{item.age}}</td>
+                            <td>{{item.v10000}}</td>
+                            <td>{{item.v25000}}</td>
+                            <td>{{item.v50000}}</td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>                
+    </div>
+</div>

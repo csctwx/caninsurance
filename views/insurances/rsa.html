@@ -1,0 +1,94 @@
+<div id="page">
+    <div class="article">
+        <div class="row wrap_17">
+            <div class="col-xs-12">
+                <h2 class="header_2 indent_4">RSA-JF Primier Vistor Plans</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="images/rsa.png" alt="GMS Immigrants & Visitors to Canada" title="" width="246" height="74">
+            </div>
+        </div>
+        <div class="row  wrap_17">
+            <h3 class="text_2 color_2">With stable pre-existing medical condition coverage price schedule:</h3>
+            <!-- {{insurance.prices.berkley}} -->
+            <table class="table table-striped">
+                <thead class="thead-inverse">
+                    <tr class="success">
+                        <th>Age</th>
+                        <th>10000</th>
+                        <th>15000</th>
+                        <th>25000</th>
+                        <th>50000</th>
+                        <th>100000</th>
+                        <th>150000</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in insurance.prices.rsa.with">
+                        <td>{{item.age}}</td>
+                        <td>{{item.v10000}}</td>
+                        <td>{{item.v15000}}</td>
+                        <td>{{item.v25000}}</td>
+                        <td>{{item.v50000}}</td>
+                        <td>{{item.v100000}}</td>
+                        <td>{{item.v150000}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row  wrap_17">
+            <h3 class="text_2 color_2">Without stable pre-existing medical condition coverage price schedule:</h3>
+            <table class="table table-striped">
+                <thead class="thead-inverse">
+                    <tr class="success">
+                        <th>Age</th>
+                        <th>10000</th>
+                        <th>15000</th>
+                        <th>25000</th>
+                        <th>50000</th>
+                        <th>100000</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in insurance.prices.rsa.without">
+                        <td>{{item.age}}</td>
+                        <td>{{item.v10000}}</td>
+                        <td>{{item.v15000}}</td>
+                        <td>{{item.v25000}}</td>
+                        <td>{{item.v50000}}</td>
+                        <td>{{item.v100000}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="text_2 color_2">English Note:</h3>
+            </div>
+        </div>
+        <div class="row wrap_17">
+            <div class="col-xs-12 col-md-6">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Attachment</th>
+                            <th>Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="files/RSA-JF-Premier-Policy-Wording.pdf" target="_blank">RSA-JF-Premier-Policy-Wording.pdf</a></td>
+                            <td>141.46 KB</td>
+                        </tr>
+                        <tr>
+                            <td><a href="files/RSA-JF-Premier-Claim-Form.pdf" target="_blank">RSA-JF-Premier-Claim-Form.pdf</a></td>
+                            <td>84.8 KB</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
