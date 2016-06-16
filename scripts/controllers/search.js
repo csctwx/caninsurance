@@ -8,7 +8,8 @@
  * Controller of the canadaInsuranceApp
  */
 angular.module('canadaInsuranceApp')
-  .controller('SearchCtrl', function (searchService) {
+  .controller('SearchCtrl', function (searchService, insuranceService) {
     this.model = searchService.model;
+    this.prices = insuranceService.travelInsurances;
     this.currentAge = 90;
   });

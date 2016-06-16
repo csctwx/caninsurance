@@ -30,11 +30,22 @@
                     </thead>
                     <tr>          
                     <tbody>
-                        <tr ng-repeat="item in search.prices.allianz.with">
-                            <td>{{item.age}}</td>
-                            <td>{{item.v10000}}</td>
-                            <td>{{item.v25000}}</td>
-                            <td>{{item.v50000}}</td>                            
+                        <tr ng-repeat="item in search.prices">
+                            <td>{{item.title}}</td>
+                            <td colspan="3">
+                                <table>
+                                    <tr>
+                                        <td>$0</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr ng-repeat="subitem in item.deductible">
+                                        <td>${{subitem.amount}}</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </td>              
                         </tr>
                     </tbody>
                 </table>
