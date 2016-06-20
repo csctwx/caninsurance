@@ -7,42 +7,43 @@
         </div>                 
         <div class="row  wrap_17">
             <div class="col-xs-3">
-                <h3 class="text_2 color_2">Current age: {{search.currentAge}}</h3>
+                <h3 class="text_2 color_2">Current age: {{search.model.currentAge}}</h3>
             </div>
             <div class="col-xs-3">
-                <h3 class="text_2 color_2">Effective date age: {{search.effectiveDateAge}}</h3>
+                <h3 class="text_2 color_2">Effective date age: {{search.model.effectiveAge}}</h3>
             </div>
             <div class="col-xs-3">
-                <h3 class="text_2 color_2">Amount: {{search.amount}}</h3>
+                <h3 class="text_2 color_2">Amount: {{search.model.amount}}</h3>
             </div>
             <div class="col-xs-3">
-                <h3 class="text_2 color_2">Total days: {{search.totalDays}}</h3>
+                <h3 class="text_2 color_2">Total days: {{search.model.totalDays}}</h3>
             </div>
             <div class="col-xs-12">
-                <table class="table table-striped">
+                <table id="search-table" class="table table-striped">
                     <thead class="thead-inverse">
                         <tr class="success">
-                            <th>Insurance Company</th>
-                            <th>Deductible</th>
-                            <th>Price/day</th>
-                            <th>Total price</th>                            
+                            <th class="col-xs-3">Insurance Company</th>
+                            <th class="col-xs-1">Deductible</th>
+                            <th class="col-xs-4">Price/day</th>
+                            <th class="col-xs-4">Total price</th>      
                         </tr>
                     </thead>
                     <tr>          
                     <tbody>
-                        <tr ng-repeat="item in search.prices">
-                            <td>{{item.title}}</td>
+                        <tr ng-repeat="item in search.model.allPrices">
+                            <td class="col-xs-3"><h3 class="text_2 color_2 ng-binding">{{item.title}}</h3></td>
                             <td colspan="3">
-                                <table>
-                                    <tr>
-                                        <td>$0</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr ng-repeat="subitem in item.deductible">
-                                        <td>${{subitem.amount}}</td>
-                                        <td></td>
-                                        <td></td>
+                                <table class="table table-bordered">
+                                    <tr ng-repeat="subitem in item.detail">
+                                        <td class="col-xs-1">${{subitem.deductible}}</td>
+                                        <td class="col-xs-4"><div>With stable pre-existing medical condition coverage:{{subitem.pricePerdayWith | currency}}</div>
+                                        <div>Without stable pre-existing medical condition coverage:<span ng-if="subitem.pricePerdayWithout">{{subitem.pricePerdayWithout | currency}}</span>
+                                        <span ng-if="!subitem.pricePerdayWithout">n/a</span>
+                                        </div>
+                                        </td>
+                                        <td class="col-xs-4"><div>With stable pre-existing medical condition coverage:{{subitem.priceTotalWith | currency}}</div>
+                                        <div>Without stable pre-existing medical condition coverage:<span ng-if="subitem.pricePerdayWithout">{{subitem.priceTotalWithout | currency}}</span>
+                                        <span ng-if="!subitem.pricePerdayWithout">n/a</span></td>
                                     </tr>
                                 </table>
                             </td>              

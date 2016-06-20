@@ -9,7 +9,5 @@
  */
 angular.module('canadaInsuranceApp')
   .controller('SearchCtrl', function (searchService, insuranceService) {
-    this.model = searchService.model;
-    this.prices = insuranceService.travelInsurances;
-    this.currentAge = 90;
+    this.model = insuranceService.searchResult;    
   });

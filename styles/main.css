@@ -195,6 +195,16 @@ body {
   }
 }
 
+#search-table > tbody > tr > td:not(:first-child) {
+  padding: 0;
+}
+
+#search-table > tbody > tr > td > table{  
+  margin-bottom: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
 @media only screen and (max-width: 767px){
   .nav {
     border:1px solid #e7e7e7;

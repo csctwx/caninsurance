@@ -49,20 +49,20 @@ angular.module('canadaInsuranceApp')
 
         var coverages = [
           { value: "0", name: "-Select-" },
-          { value: "10000", name: "$10000 CAD" },
-          { value: "15000", name: "$15000 CAD" },
-          { value: "20000", name: "$20000 CAD" },
-          { value: "25000", name: "$25000 CAD" },
-          { value: "30000", name: "$30000 CAD" },
-          { value: "40000", name: "$40000 CAD" },
-          { value: "50000", name: "$50000 CAD" },
-          { value: "60000", name: "$60000 CAD" },
-          { value: "80000", name: "$80000 CAD" },
-          { value: "100000", name: "$100000 CAD" },
-          { value: "150000", name: "$150000 CAD" },
-          { value: "200000", name: "$200000 CAD" },
-          { value: "250000", name: "$250000 CAD" },
-          { value: "300000", name: "$300000 CAD" }
+          { value: 10000, name: "$10000 CAD" },
+          { value: 15000, name: "$15000 CAD" },
+          { value: 20000, name: "$20000 CAD" },
+          { value: 25000, name: "$25000 CAD" },
+          { value: 30000, name: "$30000 CAD" },
+          { value: 40000, name: "$40000 CAD" },
+          { value: 50000, name: "$50000 CAD" },
+          { value: 60000, name: "$60000 CAD" },
+          { value: 80000, name: "$80000 CAD" },
+          { value: 100000, name: "$100000 CAD" },
+          { value: 150000, name: "$150000 CAD" },
+          { value: 200000, name: "$200000 CAD" },
+          { value: 250000, name: "$250000 CAD" },
+          { value: 300000, name: "$300000 CAD" }
         ];
        
        
@@ -107,6 +107,7 @@ angular.module('canadaInsuranceApp')
         };
 
         return {            
+            travelInsurancesUrl: '/caninsurancecms/travel-insurances',
             isCurrentPath: isCurrentPath,
             coverages: coverages
         };
