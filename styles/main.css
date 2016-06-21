@@ -205,7 +205,19 @@ body {
   border-bottom: none;
 }
 
+.box_6 .put-left.auto {
+  margin-right: auto;
+}
+
+.grid_8.col-md-8{
+  width: 66%;
+  margin-left: 0;
+}
+
 @media only screen and (max-width: 767px){
+  .grid_8.col-md-8{
+    width: 100%;
+  }
   .nav {
     border:1px solid #e7e7e7;
   }

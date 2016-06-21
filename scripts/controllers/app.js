@@ -23,4 +23,11 @@ angular.module('canadaInsuranceApp')
       }, function(response){
 
     }); 
+
+    resource.getBlogs.then(function(response){
+        resource.blogs = appUtil.transformBlogs(response.data); 
+
+    }, function(response){
+
+    });
   });

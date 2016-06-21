@@ -8,7 +8,7 @@
  * Service in the canadaInsuranceApp.
  */
 angular.module('canadaInsuranceApp')
-    .service('resource', function() {
+    .service('resource', function($http) {
         var pathmap = ['/home', '/travel-insurance'];
         var travelInsurance = ['/visitor', 
                                '/berkley-jf-royal',
@@ -106,8 +106,17 @@ angular.module('canadaInsuranceApp')
             return isCur;
         };
 
-        return {            
+        var blogs = [];
+
+        var blogsUrl = '/caninsurancecms/blogs';
+
+        var getBlogs = $http.get(blogsUrl);
+
+        return {   
+            blogs: blogs,         
             travelInsurancesUrl: '/caninsurancecms/travel-insurances',
+            blogsUrl: blogsUrl,
+            getBlogs: getBlogs,
             isCurrentPath: isCurrentPath,
             coverages: coverages
         };

@@ -8,7 +8,7 @@
  * Service in the canadaInsuranceApp.
  */
 angular.module('canadaInsuranceApp')
-    .service('appUtil', function() {               
+    .service('appUtil', function($sce) {               
 
         var calculateAge = function calculateAge(birthday) { // birthday is a date
             var ageDifMs = Date.now() - birthday.getTime();
@@ -203,8 +203,41 @@ angular.module('canadaInsuranceApp')
             return items;
         };
 
+        var transformBlogs = function(response){
+            var items = [];
+            if (response instanceof Array) {
+                var items = [];
+                for (var i = 0; i < response.length; i++) {
+                        var item = {};
+                        for (var prop in response[i]) {
+                            if ('title' == prop) {
+                                item['title'] = response[i].title[0].value;
+                            }
+                            else if('body' == prop){
+                                item['body'] = $sce.trustAsHtml(response[i].body[0].value);
+                            }
+                            else if('field_image' == prop){
+                                item['image'] = {
+                                                    url:response[i].field_image[0].url,
+                                                    alt:response[i].field_image[0].alt
+                                                };
+                            }
+                            else if('created' == prop){
+                                item['created'] = response[i].created[0].value*1000;
+                            }
+                            else if('changed' == prop){
+                                item['changed'] = response[i].changed[0].value;
+                            }
+                        }
+                        items.push(item);
+                }
+            }
+            return items;
+        };
+
         return {            
             createSearchResult: createSearchResult,
-            fromViews: fromViews
+            fromViews: fromViews,
+            transformBlogs: transformBlogs
         };
     });
