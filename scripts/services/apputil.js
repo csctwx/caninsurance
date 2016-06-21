@@ -162,18 +162,24 @@ angular.module('canadaInsuranceApp')
                             if (prop.indexOf('field_') > -1) {
                                 if (response[i][prop].length > 0) {
                                     var myprop = prop.replace('field_', '');
-                                    if (response[i][prop].length > 1) {
-                                        item[myprop] = [];                                        
-                                        for (var j = 0; j < response[i][prop].length; j++) {
-                                            var subitem = {};
-                                            for (var subprop in response[i][prop][j]) {
-                                                if (subprop.indexOf('field_') > -1 && subprop != 'field_name') {
-                                                    var mysubprop = subprop.replace('field_', '');
-                                                    subitem[mysubprop] = getArrayValue(response[i][prop][j][subprop]);
-                                                }
-                                            }
-                                            item[myprop].push(subitem);
+                                    if (response[i][prop].length > 0) {
+                                        if('name' == myprop){
+                                            item[myprop] = response[i][prop][0].value;
                                         }
+                                        else{
+                                            item[myprop] = [];                                        
+                                            for (var j = 0; j < response[i][prop].length; j++) {
+                                                var subitem = {};
+                                                for (var subprop in response[i][prop][j]) {
+                                                    if (subprop.indexOf('field_') > -1 && subprop != 'field_name') {
+                                                        var mysubprop = subprop.replace('field_', '');
+                                                        subitem[mysubprop] = getArrayValue(response[i][prop][j][subprop]);
+                                                    }
+                                                }
+                                                item[myprop].push(subitem);
+                                            }  
+                                        }
+                                        
                                         
                                     } else {
                                         if (response[i][prop][0].url) {
